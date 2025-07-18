@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { useQuiz } from "../context/QuizContext";
 
-function Tick() {
-  const { secondsRemaining, dispatch } = useQuiz();
+function Tick({ secondsRemaining, dispatch }) {
   const min = String(Math.floor(secondsRemaining / 60)).padStart(2, 0);
   const sec = String(secondsRemaining % 60).padStart(2, 0);
   useEffect(
